@@ -1,0 +1,1592 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="css/index.css">
+    <script src="lib/jquery-3.7.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script>
+        $(function () {
+            window.addEventListener("wheel", function (e) {
+                e.preventDefault();
+            }, { passive: false });
+
+            var $html = $("html");
+
+            var page = 1;
+
+            var lastPage = $("section").length;
+
+            $html.animate({ scrollTop: 0 }, 10);
+
+
+            $(window).on("wheel", function (e) {
+
+                if ($html.is(":animated")) return;
+
+                if (e.originalEvent.deltaY > 0) {
+                    if (page == lastPage) return;
+
+                    page++;
+                } else if (e.originalEvent.deltaY < 0) {
+                    if (page == 1) return;
+
+                    page--;
+                }
+                var posTop = (page - 1) * $(window).height();
+
+                $html.animate({ scrollTop: posTop });
+
+            });
+
+            //cont_01 스크립트 시작
+
+           
+
+            let menu = $('.cont_01 .inner nav .menu');
+            let menuIcon = $('.cont_01 .inner nav .menu .up a:last-child img');
+            let iconList = ['img/cont_01_shopping.png', 'img/cont_02_shopping.png', 'img/cont_03_shopping.png', 'img/cont_04_shopping.png', 'img/cont_05_shopping.png', 'img/cont_06_shopping.png', 'img/cont_07_shopping.png', 'img/cont_08_shopping.png']
+            let menuTop = $('.cont_01 .inner nav .menu').offset().top;
+
+            let cont02Top = $('.cont_02').offset().top;
+            let cont03Top = $('.cont_03').offset().top;
+            let cont04Top = $('.cont_04').offset().top;
+            let cont05Top = $('.cont_05').offset().top;
+            let cont06Top = $('.cont_06').offset().top;
+            let cont07Top = $('.cont_07').offset().top;
+            let cont08Top = $('.cont_08').offset().top;
+
+            $(window).scroll(function () {
+
+                if ($(window).scrollTop() == 0) {
+                    menu.removeClass('on')
+                    menuIcon.attr('src', iconList[0])
+                }
+                else if ($(window).scrollTop() == cont02Top) {
+                    menu.removeClass('on1')
+                    menu.addClass('on')
+                    menuIcon.attr('src', iconList[1])
+                }
+                else if ($(window).scrollTop() == cont03Top) {
+                    menu.removeClass('on2')
+                    menu.removeClass('on')
+                    menu.addClass('on1')
+                    menuIcon.attr('src', iconList[2])
+                }
+                else if ($(window).scrollTop() == cont04Top) {
+                    menu.removeClass('on3')
+                    menu.removeClass('on1')
+                    menu.addClass('on2')
+                    menuIcon.attr('src', iconList[3])
+                }
+                else if ($(window).scrollTop() == cont05Top) {
+                    menu.removeClass('on4')
+                    menu.removeClass('on2')
+                    menu.addClass('on3')
+                    menuIcon.attr('src', iconList[4])
+                }
+                else if ($(window).scrollTop() == cont06Top) {
+                    menu.removeClass('on5')
+                    menu.removeClass('on3')
+                    menu.addClass('on4')
+                    menuIcon.attr('src', iconList[5])
+                }
+                else if ($(window).scrollTop() == cont07Top) {
+                    menu.removeClass('on6')
+                    menu.removeClass('on4')
+                    menu.addClass('on5')
+                    menuIcon.attr('src', iconList[6])
+                }
+                else if ($(window).scrollTop() == cont08Top) {
+                    menu.removeClass('on5')
+                    menu.addClass('on6')
+                    menuIcon.attr('src', iconList[7])
+                }
+            })
+
+
+            $('.cont_01 .inner .bg').fadeOut()
+            $('.cont_01 .inner video').click(function () {
+                $('.cont_01 .inner .bg').fadeIn()
+            });
+            $('.cont_01 .inner .bg .close').click(function () {
+                $('.cont_01 .inner .bg').fadeOut()
+            })
+
+            $('.cont_02 .inner .bg').fadeOut()
+            $('.cont_02 .inner video').click(function () {
+                $('.cont_02 .inner .bg').fadeIn()
+            });
+            $('.cont_02 .inner .bg .close').click(function () {
+                $('.cont_02 .inner .bg').fadeOut()
+            })
+
+            $('.cont_03 .inner video').click(function () {
+                $('.cont_03 .inner .bg').fadeIn()
+            });
+            $('.cont_03 .inner .bg .close').click(function () {
+                $('.cont_03 .inner .bg').fadeOut()
+            })
+
+            $('.cont_04 .inner video').click(function () {
+                $('.cont_04 .inner .bg').fadeIn()
+            });
+            $('.cont_04 .inner .bg .close').click(function () {
+                $('.cont_04 .inner .bg').fadeOut()
+            })
+            $('.cont_05 .inner video').click(function () {
+                $('.cont_05 .inner .bg').fadeIn()
+            });
+            $('.cont_05 .inner .bg .close').click(function () {
+                $('.cont_05 .inner .bg').fadeOut()
+            })
+
+            $('.cont_06 .inner video').click(function () {
+                $('.cont_06 .inner .bg').fadeIn()
+            });
+            $('.cont_06 .inner .bg .close').click(function () {
+                $('.cont_06 .inner .bg').fadeOut()
+            })
+
+            $('.cont_07 .inner video').click(function () {
+                $('.cont_07 .inner .bg').fadeIn()
+            });
+            $('.cont_07 .inner .bg .close').click(function () {
+                $('.cont_07 .inner .bg').fadeOut()
+            })
+
+
+            //cont_02 스크립트 시작
+
+            let list = $('.cont_02 .inner .bg .list h4');
+            let item = $('.cont_02 .inner .bg .arti .item_box');
+            let bigImg = $('.cont_02 .inner .bg .big_img img');
+
+            imgList = ['img/giftforher.png', 'img/giftbabymain.png', 'img/gifthomemain.png', 'img/personalization.png']
+
+
+            var swiper = new Swiper(".mySwiper02", {
+                effect: "cards",
+                grabCursor: true,
+            });
+
+            list.click(function () {
+
+                i = $(this).index();
+
+                bigImg.attr('src', imgList[i])
+
+                list.removeClass('on')
+                $(this).addClass('on')
+
+                item.removeClass('on')
+                item.eq(i).addClass('on')
+
+
+            })
+
+
+            //cont_04 스크립트 시작
+
+            var mySwiper = new Swiper(".swiper-container", {
+                direction: "vertical",
+                loop: true,
+                pagination: ".swiper-pagination",
+                grabCursor: true,
+                speed: 1000,
+                paginationClickable: true,
+                parallax: true,
+                autoplay: {
+                    delay: 5000,
+                    disableOnInteraction: false,
+                },
+                effect: "slide",
+                mousewheelControl: 1
+            });
+
+            //cont_05 스크립트 시작
+
+            let womenList = $('.cont_05 .inner .bg .arti .list h4');
+            let womenItem = $('.cont_05 .inner .bg .arti .item_box .inner');
+
+            womenList.click(function () {
+
+                womenList.removeClass('on')
+                $(this).addClass('on')
+
+                womenItem.removeClass('on')
+                womenItem.eq($(this).index()).addClass('on')
+            })
+
+
+            //cont_06 스크립트 시작
+
+            let accList = $('.cont_06 .inner .bg .arti .cont .right .inner .list');
+            let accImg = $('.cont_06 .inner .bg .arti .cont .left .item_box');
+
+            accList.click(function () {
+
+                accImg.removeClass('on')
+                accImg.eq($(this).index()).addClass('on')
+            });
+
+            //cont_07 스크립트 시작
+            let artListBg = $('.cont_07 .inner .bg .arti .list')
+            let artList = $('.cont_07 .inner .bg .arti .list .inner h4')
+            let artImgList = ['img/artHighlight.png', 'img/artTravel.jpg', 'img/artHome.jpg', 'img/artBook.jpg', 'img/artSports.jpg', 'img/artWatch.jpg']
+            let artBgImg = $('.cont_07 .inner .bg .arti img')
+            let artInfo = $('.cont_07 .inner .bg .arti >a')
+
+
+
+            artList.click(function () {
+
+                i = $(this).index();
+                artList.css({
+                    'color': 'rgba(255, 255, 255, 1)',
+                    'right': '0px',
+                })
+                $(this).css({
+                    'color': 'rgba(230, 128, 64, 1)',
+                    'right': '-10px',
+                })
+
+                artBgImg.attr('src', artImgList[i])
+            })
+
+
+            artListBg.mouseleave(function () {
+                artInfo.css({
+                    'opacity': '1'
+                })
+            })
+            artListBg.mouseenter(function () {
+                artInfo.css({
+                    'opacity': '0'
+                })
+            })
+
+            //footer 스크립트 시작
+
+            let footerInfo = $('.footer .inner .up .item a');
+            let lang = $('.footer .inner .down .item .lang');
+            let langBox = $('.footer .inner .down .item .lang .lang_box');
+
+            footerInfo.mouseenter(function () {
+                $(this).stop().animate({
+                    'opacity': '1',
+                    'font-weight': '900'
+                })
+            })
+            footerInfo.mouseleave(function () {
+                $(this).stop().animate({
+                    'opacity': '0.7',
+                    'font-weight': '400'
+                })
+            })
+            lang.click(function () {
+                langBox.slideToggle(600)
+            })
+
+
+            let cont01Top = $('.cont_01').offset().top;
+            let TopBtn = $('.footer > .up');
+
+            $(window).scroll(function () {
+
+                if ($(window).scrollTop() >= cont02Top) {
+                    TopBtn.css({
+                        'opacity': '1'
+                    })
+                    TopBtn.fadeIn(600)
+                }
+                else if ($(window).scrollTop() == cont01Top) {
+                    TopBtn.fadeOut(600)
+                }
+            })
+
+            TopBtn.click(function () {
+                $('body, html').animate({
+                    scrollTop: 0
+                }, 1500)
+            })
+
+
+            //2차메뉴 스크립스 시작
+            let menuBar = $('.cont_01 .inner nav .menu .down a');
+            let depth01 = $('.cont_01 .inner nav .depth_01');
+            let depth02 = $('.cont_01 .inner nav .depth_01 >ul > .depth_02 li');
+            let depth01Close = $('.cont_01 .inner nav .depth_01 .close');
+            let menuList = $('.cont_01 > .inner > nav > .menu > .down a');
+
+            menuBar.click(function () {
+                depth01.animate({
+                    'left': '0'
+                }, 1000)
+            })
+            depth01Close.click(function () {
+                depth01.animate({
+                    'left': '5000px'
+                }, 1000)
+            })
+
+            depth02.mouseenter(function () {
+                $(this).css({
+                    'color': 'rgba(73, 45, 33, 1)',
+                    'left': '10px'
+                })
+            })
+            depth02.mouseleave(function () {
+                $(this).css({
+                    'color': 'rgba(73, 45, 33, 0.2)',
+                    'left': '0px'
+                })
+            })
+
+
+            menuList.mouseenter(function () {
+                $(this).css({
+                    'bottom': '10px',
+                })
+            });
+            menuList.mouseleave(function () {
+                $(this).css({
+                    'bottom': '0px'
+                })
+            });
+
+
+
+
+
+        });
+    </script>
+</head>
+
+<body>
+    <div id="wrap">
+        <section class="cont_01">
+            <div class="inner">
+                <div class="bg">
+                    <div class="close">
+                        <img src="img/cont_01_close.png" alt="">
+                    </div>
+                    <div class="bg_text">
+                        <p>LOUIS VUITTON - COLLABORATIONS - WITH - YAYOI KUSAMA LOUIS VUITTON - COLLABORATIONS - WITH -
+                            YAYOI KUSAMA LOUIS VUITTON - COLLABORATIONS - WITH - YAYOI KUSAMA LOUIS VUITTON -
+                            COLLABORATIONS - WITH - YAYOI KUSAMA</p>
+                    </div><!-- .bg_text end -->
+                    <div class="list">
+                        <div class="left">
+                            <div class="item">
+                                <img src="img/collaboHerItem1.png" alt="">
+                                <div class="item_info">
+                                    <span>M21726</span>
+                                    <p>LV x YK Capucines MM</p>
+                                    <strong>$10,200.00</strong>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <img src="img/collaboHerItem2.png" alt="">
+                                <div class="item_info">
+                                    <span>1AB8ZY</span>
+                                    <p>LV x YK Faces Patches Fitted Denim Jacket</p>
+                                    <strong>$3,800.00</strong>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <img src="img/collaboHerItem3.png" alt="">
+                                <div class="item_info">
+                                    <span>1ABD7F</span>
+                                    <p>LV x YK LV Squad Sneaker Boot</p>
+                                    <strong>$1,450.00</strong>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <img src="img/collaboHerItem4.png" alt="">
+                                <div class="item_info">
+                                    <span>M81982</span>
+                                    <p>LV x YK Toiletry Pouch On Chain</p>
+                                    <strong>$2,440.00</strong>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <img src="img/collaboHerItem5.png" alt="">
+                                <div class="item_info">
+                                    <span>M46426</span>
+                                    <p>LV x YK Speedy Bandoulière 25</p>
+                                    <strong>$2,900.00</strong>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <img src="img/collaboHerItem6.png" alt="">
+                                <div class="item_info">
+                                    <span>1AB858</span>
+                                    <p>LV x YK Faces Print T-Shirt</p>
+                                    <strong>$1,360.00</strong>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <img src="img/collaboHerItem7.png" alt="">
+                                <div class="item_info">
+                                    <span>M78313</span>
+                                    <p>LV x YK Faces Bandeau</p>
+                                    <strong>$230.00</strong>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <img src="img/collaboHerItem8.png" alt="">
+                                <div class="item_info">
+                                    <span>1AB7YC</span>
+                                    <p>LV x YK Faces Pajama Shirt</p>
+                                    <strong>$2,320.00</strong>
+                                </div>
+                            </div>
+                        </div><!-- .left end -->
+                        <div class="right">
+                            <div class="item">
+                                <img src="img/collaboHerItem9.png" alt="">
+                                <div class="item_info">
+                                    <span>M46447</span>
+                                    <p>LV x YK Neverfull MM</p>
+                                    <strong>$3,100.00</strong>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <img src="img/collaboHerItem10.png" alt="">
+                                <div class="item_info">
+                                    <span>1AB7YS</span>
+                                    <p>LV x YK Faces Pajama Pants</p>
+                                    <strong>$2,040.00</strong>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <img src="img/collaboHerItem11.png" alt="">
+                                <div class="item_info">
+                                    <span>1AB7Z0</span>
+                                    <p>LV x YK Faces A-Line Mini Skirt</p>
+                                    <strong>$3,000.00</strong>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <img src="img/collaboHerItem12.png" alt="">
+                                <div class="item_info">
+                                    <span>M78310</span>
+                                    <p>LV x YK Faces Square 90</p>
+                                    <strong>$540.00</strong>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <img src="img/collaboHerItem13.png" alt="">
+                                <div class="item_info">
+                                    <span>M78312</span>
+                                    <p>LV x YK Faces Bandeau</p>
+                                    <strong>$230.00</strong>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <img src="img/collaboHerItem14.png" alt="">
+                                <div class="item_info">
+                                    <span>M46429</span>
+                                    <p>LV x YK OnTheGo MM</p>
+                                    <strong>$4,050.00</strong>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <img src="img/collaboHerItem15.png" alt="">
+                                <div class="item_info">
+                                    <span>1AB7ON</span>
+                                    <p>LV x YK Faces Zip-Up Dress</p>
+                                    <strong>$4,350.00</strong>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <img src="img/collaboHerItem16.png" alt="">
+                                <div class="item_info">
+                                    <span>1AB8IQ</span>
+                                    <p>LV x YK Faces Patches Cropped Hoodie</p>
+                                    <strong>$2,040.00</strong>
+                                </div>
+                            </div>
+                        </div><!-- .right end -->
+                    </div><!-- .list end -->
+                    <div class="title">
+                        <h4>LOUIS VUITTON COLLABORATION</h4>
+                        <a href="#">More</a>
+                    </div><!-- .title end -->
+                </div>
+                <h1>
+                    <img src="img/cont_01_logo.png" alt="">
+                </h1>
+                <nav>
+                    <div class="menu">
+                        <div class="up">
+                            <a href="#">Wishlist</a>
+                            <a href="#">MyLV</a>
+                            <a href="#">
+                                <img src="img/cont_01_shopping.png" alt="">
+                            </a>
+                        </div><!-- .up end -->
+                        <div class="down">
+                            <a href="#">Art of Living</a>
+                            <a href="#">Acc</a>
+                            <a href="#">Women</a>
+                            <a href="#">Bags</a>
+                            <a href="#">New</a>
+                            <a href="#">Gifts</a>
+                            <a href="#">Collabo</a>
+                        </div><!-- .down end -->
+                    </div><!-- .menu end -->
+                    <div class="depth_01">
+                        <div class="close">
+                            <img src="img/close3.png" alt="">
+                        </div>
+                        <ul>
+                            <li>Collabo</li>
+                            <ul class="depth_02">
+                                <li>For Her</li>
+                                <li>For Him</li>
+                            </ul>
+                        </ul>
+                        <ul>
+                            <li>Gifts</li>
+                            <ul class="depth_02">
+                                <li>Gifts for Her</li>
+                                <li>Gifts for Him</li>
+                                <li>Gifts For Baby</li>
+                                <li>Gifts for Home</li>
+                                <li>Personalization</li>
+                            </ul>
+                        </ul>
+                        <ul>
+                            <li>New</li>
+                            <ul class="depth_02">
+                                <li>For Women</li>
+                                <li>For Men</li>
+                                <li>For Baby</li>
+                                <li>Treasure Trunk VIA Pharrell Williams</li>
+                            </ul>
+                        </ul>
+                        <ul>
+                            <li>Bags</li>
+                            <ul class="depth_02">
+                                <li>For Women</li>
+                                <li>For Men</li>
+                            </ul>
+                        </ul>
+                        <ul>
+                            <li>Women</li>
+                            <ul class="depth_02">
+                                <li>Handbags</li>
+                                <li>Accessories</li>
+                                <li>Ready-to-Wear</li>
+                                <li>Small Leather Goods</li>
+                                <li>Travel</li>
+                                <li>Fashion Jewelry</li>
+                                <li>Shoes</li>
+                            </ul>
+                        </ul>
+                        <ul>
+                            <li>Jewelry</li>
+                            <ul class="depth_02">
+                                <li>Categories</li>
+                                <li>Collections</li>
+                                <li>Icons</li>
+                                <li>Highlights</li>
+                                <li>High Jewelry</li>
+                            </ul>
+                        </ul>
+                        <ul>
+                            <li>Watches</li>
+                            <ul class="depth_02">
+                                <li>World of Watches</li>
+                                <li>Traditional Watches</li>
+                                <li>Connected Watches</li>
+                                <li>La Fabrique du Temps</li>
+                                <li>Louis Vuitton Watch Prize for Independent Creatives</li>
+                            </ul>
+                        </ul>
+                        <ul>
+                            <li>Perfumes</li>
+                            <ul class="depth_02">
+                                <li>Highlights</li>
+                                <li>Icons</li>
+                                <li>Collections</li>
+                                <li>Exceptional Creations</li>
+                                <li>World of Fragrances</li>
+                            </ul>
+                        </ul>
+                        <ul>
+                            <li>Art of Living</li>
+                            <ul class="depth_02">
+                                <li>Highlights</li>
+                                <li>Trunks and Travel</li>
+                                <li>Home</li>
+                                <li>Books and Stationery</li>
+                                <li>Sports and Lifestyle</li>
+                                <li>Tech Objects and Accessories</li>
+                            </ul>
+                        </ul>
+                    </div>
+                </nav>
+                <video autoplay muted loop>
+                    <source src="img/collabo_video.mp4" type="video/mp4">
+                </video>
+            </div><!-- .inner end -->
+        </section><!-- .cont_01 end -->
+        <section class="cont_02">
+            <div class="inner">
+                <div class="bg">
+                    <div class="close">
+                        <img src="img/cont_02_close.png" alt="">
+                    </div>
+                    <div class="list">
+                        <h4 class="on">Gifts For Her</h4>
+                        <h4>Gifts For Baby</h4>
+                        <h4>Gifts For Home</h4>
+                        <h4>Personalization</h4>
+                    </div><!-- .list end -->
+                    <div class="big_img">
+                        <img src="img/giftforher.png" alt="">
+                        <span>More</span>
+                    </div><!-- .big_img end -->
+                    <div class="arti">
+                        <div class="swiper mySwiper02 item_box on">
+                            <div class="swiper-wrapper">
+                              <div class="swiper-slide">
+                                <div class="item">
+                                    <img src="img/giftHerItem1.png" alt="">
+                                    <div class="item_info">
+                                        <span>M23069</span>
+                                        <p>Speedy Bandoulière 20</p>
+                                        <strong>$2,280.00</strong>
+                                    </div><!-- .item_info end -->
+                                </div>
+                              </div>
+                              <div class="swiper-slide">
+                                <div class="item">
+                                    <img src="img/giftHerItem2.png" alt="">
+                                    <div class="item_info">
+                                        <span>Z1908E</span>
+                                        <p>My Monogram Soft Cat Eye Sunglasses</p>
+                                        <strong>$515.00</strong>
+                                    </div><!-- .item_info end -->
+                                </div>
+                              </div>
+                              <div class="swiper-slide">
+                                <div class="item">
+                                    <img src="img/giftHerItem3.png" alt="">
+                                    <div class="item_info">
+                                        <span>M22921</span>
+                                        <p>Neverfull MM</p>
+                                        <strong>$2,350.00</strong>
+                                    </div><!-- .item_info end -->
+                                </div>
+                              </div>
+                              <div class="swiper-slide">
+                                <div class="item">
+                                    <img src="img/giftHerItem4.png" alt="">
+                                    <div class="item_info">
+                                        <span>M8333Z</span>
+                                        <p>Vivienne Amour Bracelet</p>
+                                        <strong>$730.00</strong>
+                                    </div><!-- .item_info end -->
+                                </div>
+                              </div>
+                            </div>
+                        </div>
+                        <div class="swiper mySwiper02 item_box">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div class="item">
+                                        <img src="img/giftBabyItem1.png" alt="">
+                                        <div class="item_info">
+                                            <span>GI015D</span>
+                                            <p>Meli-Melo Embroidered Suit</p>
+                                            <strong>$1,150.00</strong>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="item">
+                                        <img src="img/giftBabyItem2.png" alt="">
+                                        <div class="item_info">
+                                            <span>GI009D</span>
+                                            <p>2 Pockets Coat</p>
+                                            <strong>$1,400.00</strong>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="item">
+                                        <img src="img/giftBabyItem3.png" alt="">
+                                        <div class="item_info">
+                                            <span>GI0870</span>
+                                            <p>Louis Teddy Bear</p>
+                                            <strong>$1,370.00</strong>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="item">
+                                        <img src="img/giftBabyItem4.png" alt="">
+                                        <div class="item_info">
+                                            <span>GI016D</span>
+                                            <p>Flower Knitted Set</p>
+                                            <strong>$1,030.00</strong>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper mySwiper02 item_box">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div class="item">
+                                        <img src="img/giftHomeItem1.png" alt="">
+                                        <div class="item_info">
+                                            <span>GI0878</span>
+                                            <p>Annie Flower Bookend</p>
+                                            <strong>$1,980.00</strong>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="item">
+                                        <img src="img/giftHomeItem2.png" alt="">
+                                        <div class="item_info">
+                                            <span>GI0836</span>
+                                            <p>Monogram Flower Trinket Bowl</p>
+                                            <strong>$885.00</strong>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="item">
+                                        <img src="img/giftHomeItem3.png" alt="">
+                                        <div class="item_info">
+                                            <span>GI0822</span>
+                                            <p>Monogram Flower Trinket Bowl</p>
+                                            <strong>$885.00</strong>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="item">
+                                        <img src="img/giftHomeItem4.png" alt="">
+                                        <div class="item_info">
+                                            <span>M77863</span>
+                                            <p>LV Checkmate Cushion</p>
+                                            <strong>$720.00</strong>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper mySwiper02 item_box">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div class="item">
+                                        <img src="img/personalizationItem.png" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <h1>
+                    <img src="img/cont_02_logo.png" alt="">
+                </h1>
+                <video autoplay muted loop>
+                    <source src="img/gift_video.mp4" type="video/mp4">
+                </video>
+            </div><!-- .inner end -->
+        </section><!-- .cont_02 end -->
+        <section class="cont_03">
+            <div class="inner">
+                <div class="bg">
+                    <div class="close">
+                        <img src="img/cont_03_close.png" alt="">
+                    </div>
+                    <div class="arti">
+                        <div class="item">
+                            <img src="img/newthisseason2.png" alt="">
+                            <div class="item_info">
+                                <h4>New This Season</h4>
+                                <span>More</span>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <img src="img/lv_academy.png" alt="">
+                            <div class="item_info">
+                                <h4>Lv-Academy</h4>
+                                <span>More</span>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <img src="img/lv-by-pool2.png" alt="">
+                            <div class="item_info">
+                                <h4>Lv-By-The-Pool</h4>
+                                <span>More</span>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <img src="img/Fall-Winter 2023 women2.png" alt="">
+                            <div class="item_info">
+                                <h4>Fall-Winter 2023</h4>
+                                <span>More</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <h1>
+                    <img src="img/cont_03_logo.png" alt="">
+                </h1>
+                <video autoplay muted loop>
+                    <source src="img/new_video.mp4" type="video/mp4">
+                </video>
+            </div><!-- .inner end -->
+        </section><!-- .cont_03 end -->
+        <section class="cont_04">
+            <div class="inner">
+                <div class="bg">
+                    <div class="close">
+                        <img src="img/cont_04_close.png" alt="">
+                    </div>
+                    <div class="title">
+                        <h4>Women Bags</h4>
+                    </div>
+                    <div class="page-wrap">
+                        <div id="home-slider">
+                            <div class="swiper-container">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide swiper-slide-one">
+                                        <div class="swiper-image" data-swiper-parallax-y="-20%">
+                                            <div class="swiper-image-inner swiper-image-left swiper-image-one">
+                                                <h1>LV <span class="emphasis">OnTheGo PM</span></h1>
+                                                <p>M46647</p>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-image" data-swiper-parallax-y="35%">
+                                            <div class="swiper-image-inner swiper-image-right swiper-image-two">
+                                                <p class="paragraph">
+                                                    $3,400.00
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide swiper-slide-two">
+                                        <div class="swiper-image" data-swiper-parallax-y="-20%">
+                                            <div class="swiper-image-inner swiper-image-left swiper-image-three">
+                                                <h1>LV <span class="emphasis">Coussin PM</span></h1>
+                                                <p>M23505</p>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-image" data-swiper-parallax-y="35%">
+                                            <div class="swiper-image-inner swiper-image-right swiper-image-four">
+                                                <p class="paragraph">
+                                                    $5,200.00
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide swiper-slide-three">
+                                        <div class="swiper-image" data-swiper-parallax-y="-20%">
+                                            <div class="swiper-image-inner swiper-image-left swiper-image-five">
+                                                <h1>LV <span class="emphasis">Coussin PM</span></h1>
+                                                <p>M23466</p>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-image" data-swiper-parallax-y="35%">
+                                            <div class="swiper-image-inner swiper-image-right swiper-image-six">
+                                                <p class="paragraph">
+                                                    $4,950.00
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide swiper-slide-four">
+                                        <div class="swiper-image" data-swiper-parallax-y="-20%">
+                                            <div class="swiper-image-inner swiper-image-left swiper-image-seven">
+                                                <h1>LV <span class="emphasis">Petite Malle</span>. <br><span>
+                                                        Capitale</span></h1>
+                                                <p>M46755</p>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-image" data-swiper-parallax-y="35%">
+                                            <div class="swiper-image-inner swiper-image-right swiper-image-eight">
+                                                <p class="paragraph">
+                                                    $7,000.00
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide swiper-slide-five">
+                                        <div class="swiper-image" data-swiper-parallax-y="-20%">
+                                            <div class="swiper-image-inner swiper-image-left swiper-image-nine">
+                                                <h1>LV <span class="emphasis">Mini Dauphine</span></h1>
+                                                <p>M22871</p>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-image" data-swiper-parallax-y="35%">
+                                            <div class="swiper-image-inner swiper-image-right swiper-image-ten">
+                                                <p class="paragraph">
+                                                    $4,300.00
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide swiper-slide-six">
+                                        <div class="swiper-image" data-swiper-parallax-y="-20%">
+                                            <div class="swiper-image-inner swiper-image-left swiper-image-11">
+                                                <h1>LV <span class="emphasis">Marellini</span></h1>
+                                                <p>M22736</p>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-image" data-swiper-parallax-y="35%">
+                                            <div class="swiper-image-inner swiper-image-right swiper-image-12">
+                                                <p class="paragraph">
+                                                    $2,370.00
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide swiper-slide-seven">
+                                        <div class="swiper-image" data-swiper-parallax-y="-20%">
+                                            <div class="swiper-image-inner swiper-image-left swiper-image-13">
+                                                <h1>LV <span class="emphasis">New Square Bag</span></h1>
+                                                <p>M23059</p>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-image" data-swiper-parallax-y="35%">
+                                            <div class="swiper-image-inner swiper-image-right swiper-image-14">
+                                                <p class="paragraph">
+                                                    $3,550.00
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide swiper-slide-eight">
+                                        <div class="swiper-image" data-swiper-parallax-y="-20%">
+                                            <div class="swiper-image-inner swiper-image-left swiper-image-15">
+                                                <h1>LV <span class="emphasis">Pochette Métis</span>. <br><span>East
+                                                        West</span></h1>
+                                                <p>M46596</p>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-image" data-swiper-parallax-y="35%">
+                                            <div class="swiper-image-inner swiper-image-right swiper-image-16">
+                                                <p class="paragraph">
+                                                    $3,100.00
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide swiper-slide-nine">
+                                        <div class="swiper-image" data-swiper-parallax-y="-20%">
+                                            <div class="swiper-image-inner swiper-image-left swiper-image-17">
+                                                <h1>LV <span class="emphasis">Bella</span></h1>
+                                                <p>M22198</p>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-image" data-swiper-parallax-y="35%">
+                                            <div class="swiper-image-inner swiper-image-right swiper-image-18">
+                                                <p class="paragraph">
+                                                    $4,350.00
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide swiper-slide-ten">
+                                        <div class="swiper-image" data-swiper-parallax-y="-20%">
+                                            <div class="swiper-image-inner swiper-image-left swiper-image-19">
+                                                <h1>LV <span class="emphasis">OnTheGo MM</span></h1>
+                                                <p>M22975</p>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-image" data-swiper-parallax-y="35%">
+                                            <div class="swiper-image-inner swiper-image-right swiper-image-20">
+                                                <p class="paragraph">
+                                                    $3,350.00
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-pagination"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <h1>
+                    <img src="img/cont_04_logo.png" alt="">
+                </h1>
+                <!-- <nav>
+                    <div class="menu">
+                        <div class="up">
+                            <a href="#">Wishlist</a>
+                            <a href="#">MyLV</a>
+                            <a href="#">
+                                <img src="img/cont_04_shopping.png" alt="">
+                            </a>
+                        </div>
+                        <div class="down">
+                            <a href="#">Art of Living</a>
+                            <a href="#">Acc</a>
+                            <a href="#">Women</a>
+                            <a href="#">Bags</a>
+                            <a href="#">New</a>
+                            <a href="#">Gifts</a>
+                            <a href="#">Collabo</a>
+                        </div>
+                    </div>
+                </nav> -->
+                <video autoplay muted loop>
+                    <source src="img/bags_video.mp4" type="video/mp4">
+                </video>
+            </div><!-- .inner end -->
+        </section><!-- .cont_04 end -->
+        <section class="cont_05">
+            <div class="inner">
+                <div class="bg">
+                    <div class="close">
+                        <img src="img/cont_05_close.png" alt="">
+                    </div>
+                    <div class="arti">
+                        <div class="title">
+                            <h4>Women</h4>
+                        </div>
+                        <div class="list">
+                            <h4 class="on">Handbags</h4>
+                            <h4>Travel</h4>
+                            <h4>Accessories</h4>
+                            <h4>Ready-to-Wear</h4>
+                            <h4>Shoes</h4>
+                        </div>
+                        <div class="item_box">
+                            <div class="inner on">
+                                <div class="item">
+                                    <img src="img/womenBagsItem1.png" alt="">
+                                    <div class="info">
+                                        <span>M82403</span>
+                                        <p>Nano Alma</p>
+                                        <strong>$1,820.00</strong>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <img src="img/womenBagsItem2.png" alt="">
+                                    <div class="info">
+                                        <span>M46311</span>
+                                        <p>Loop Hobo</p>
+                                        <strong>$2,780.00</strong>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <img src="img/womenBagsItem3.png" alt="">
+                                    <div class="info">
+                                        <span>M22976</span>
+                                        <p>OnTheGo PM</p>
+                                        <strong>$3,350.00</strong>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <img src="img/womenBagsItem4.png" alt="">
+                                    <div class="info">
+                                        <span>M23080</span>
+                                        <p>Néonoé MM</p>
+                                        <strong>$2,730.00</strong>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="inner">
+                                <div class="item">
+                                    <img src="img/womenTravelItem1.png" alt="">
+                                    <div class="info">
+                                        <span>M23203</span>
+                                        <p>Horizon 55</p>
+                                        <strong>$3,400.00</strong>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <img src="img/womenTravelItem2.png" alt="">
+                                    <div class="info">
+                                        <span>M44740</span>
+                                        <p>Keepall Bandoulière 50</p>
+                                        <strong>$2,500.00</strong>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <img src="img/womenTravelItem3.png" alt="">
+                                    <div class="info">
+                                        <span>M44936</span>
+                                        <p>Nice Nano Toiletry Pouch</p>
+                                        <strong>$1,000.00</strong>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <img src="img/womenTravelItem4.png" alt="">
+                                    <div class="info">
+                                        <span>M45662</span>
+                                        <p>Dog Bag</p>
+                                        <strong>$3,500.00</strong>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="inner">
+                                <div class="item">
+                                    <img src="img/womenAccItem1.png" alt="">
+                                    <div class="info">
+                                        <span>M76649</span>
+                                        <p>Ultimate Monogram Square 90</p>
+                                        <strong>$485.00</strong>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <img src="img/womenAccItem2.png" alt="">
+                                    <div class="info">
+                                        <span>M7154M</span>
+                                        <p>LV Uptown Bucket Hat</p>
+                                        <strong>$920.00</strong>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <img src="img/womenAccItem3.png" alt="">
+                                    <div class="info">
+                                        <span>Z1987W</span>
+                                        <p>LV Malletage Cat Eye Sunglasses</p>
+                                        <strong>$925.00</strong>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <img src="img/womenAccItem4.png" alt="">
+                                    <div class="info">
+                                        <span>M0712V</span>
+                                        <p>LV Circle Prime 20mm Reversible Belt</p>
+                                        <strong>$540.00</strong>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="inner">
+                                <div class="item">
+                                    <img src="img/womenWearItem1.png" alt="">
+                                    <div class="info">
+                                        <span>1AC3M1</span>
+                                        <p>Layered Bib Shirt Dress</p>
+                                        <strong>$5,650.00</strong>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <img src="img/womenWearItem2.png" alt="">
+                                    <div class="info">
+                                        <span>1AC41M</span>
+                                        <p>Leather Trim Tricolor Monogram Dress</p>
+                                        <strong>$4,050.00</strong>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <img src="img/womenWearItem3.png" alt="">
+                                    <div class="info">
+                                        <span>1ABRTU</span>
+                                        <p>Sporty Mesh Accent Body</p>
+                                        <strong>$2,090.00</strong>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <img src="img/womenWearItem4.png" alt="">
+                                    <div class="info">
+                                        <span>1ABQNI</span>
+                                        <p>Cape Hoodie</p>
+                                        <strong>$6,300.00</strong>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="inner">
+                                <div class="item">
+                                    <img src="img/womenShoesItem1.png" alt="">
+                                    <div class="info">
+                                        <span>1AC2AO</span>
+                                        <p>LV Trainer Sneaker</p>
+                                        <strong>$1,220.00</strong>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <img src="img/womenShoesItem2.png" alt="">
+                                    <div class="info">
+                                        <span>1AC6H9</span>
+                                        <p>Parisienne Ankle Boot</p>
+                                        <strong>$1,730.00</strong>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <img src="img/womenShoesItem3.png" alt="">
+                                    <div class="info">
+                                        <span>1AC6JP</span>
+                                        <p>Olympia Sandal</p>
+                                        <strong>$1,220.00</strong>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <img src="img/womenShoesItem4.png" alt="">
+                                    <div class="info">
+                                        <span>1ACA7C</span>
+                                        <p>Blossom Sandal</p>
+                                        <strong>$1,190.00</strong>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <h1>
+                    <img src="img/cont_05_logo.png" alt="">
+                </h1>
+                <video autoplay muted loop>
+                    <source src="img/women_video.mp4" type="video/mp4">
+                </video>
+            </div><!-- .inner end -->
+        </section><!-- .cont_05 end -->
+        <section class="cont_06">
+            <div class="inner">
+                <div class="bg">
+                    <div class="close">
+                        <img src="img/cont_06_close.png" alt="">
+                    </div>
+                    <div class="arti">
+                        <div class="title">
+                            <h4>Accessories</h4>
+                        </div>
+                        <div class="cont">
+                            <div class="left">
+                                <div class="item_box on">
+                                    <div class="item">
+                                        <img src="img/JewelryItem1.png" alt="">
+                                        <div class="item_info">
+                                            <span>Q9R75D</span>
+                                            <p>Idylle Blossom Paved Ring, 3 Golds And Diamonds</p>
+                                            <strong>$7,600.00</strong>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <img src="img/JewelryItem2.png" alt="">
+                                        <div class="item_info">
+                                            <span>Q06172</span>
+                                            <p>Idylle Blossom Reversible Stud, Pink And Yellow Gold And Diamond - Per
+                                                Unit</p>
+                                            <strong>$1,940.00</strong>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <img src="img/JewelryItem3.png" alt="">
+                                        <div class="item_info">
+                                            <span>Q94191</span>
+                                            <p>Idylle Blossom sautoir, 3 golds and diamonds</p>
+                                            <strong>$11,900.00</strong>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <img src="img/JewelryItem4.png" alt="">
+                                        <div class="item_info">
+                                            <span>Q95286</span>
+                                            <p>Idylle Blossom bracelet, 3 golds and diamonds</p>
+                                            <strong>$5,050.00</strong>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <img src="img/JewelryItem5.png" alt="">
+                                        <div class="item_info">
+                                            <span>Q9F15A</span>
+                                            <p>Idylle Blossom ring, 3 golds and diamonds</p>
+                                            <strong>$4,000.00</strong>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <img src="img/JewelryItem6.png" alt="">
+                                        <div class="item_info">
+                                            <span>Q93871</span>
+                                            <p>Idylle Blossom Pendant, Pink Gold And Diamonds</p>
+                                            <strong>$3,800.00</strong>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item_box">
+                                    <div class="item">
+                                        <img src="img/watchItem1.png" alt="">
+                                        <div class="item_info">
+                                            <span>QBB167</span>
+                                            <p>Tambour Monogram, Quartz, 39.5mm, Steel & Rose Gold</p>
+                                            <strong>$6,505.00</strong>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <img src="img/watchItem2.png" alt="">
+                                        <div class="item_info">
+                                            <span>W1ST10</span>
+                                            <p>Tambour, Automatic, 40mm, Steel</p>
+                                            <strong>$18,500.00</strong>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <img src="img/watchItem3.png" alt="">
+                                        <div class="item_info">
+                                            <span>QBB200</span>
+                                            <p>Tambour Slim Monogram Dentelle, Quartz, 33mm, Diamonds</p>
+                                            <strong>$10,805.00</strong>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <img src="img/watchItem4.png" alt="">
+                                        <div class="item_info">
+                                            <span>QBB182
+                                            </span>
+                                            <p>Tambour Moon Dual Time, Quartz, 35mm, Diamonds</p>
+                                            <strong>$6,770.00</strong>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <img src="img/watchItem5.png" alt="">
+                                        <div class="item_info">
+                                            <span>Q1Q030</span>
+                                            <p>Trunk Table Clock, Quartz, 80mm, Steel, Monogram Eclipse</p>
+                                            <strong>$5,750.00</strong>
+                                            =
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <img src="img/watchItem6.png" alt="">
+                                        <div class="item_info">
+                                            <span>QBB165</span>
+                                            <p>Tambour Monogram, Quartz, 28mm, Steel & Rose Gold</p>
+                                            <strong>$5,755.00</strong>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item_box">
+                                    <div class="item">
+                                        <img src="img/perfumesItem1.png" alt="">
+                                        <div class="item_info">
+                                            <span>LP0326</span>
+                                            <p>Pacific Chill</p>
+                                            <strong>$300.00</strong>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <img src="img/perfumesItem2.png" alt="">
+                                        <div class="item_info">
+                                            <span>LS0591</span>
+                                            <p>Pacific Chill 100ml Travel Case</p>
+                                            <strong>$745.00</strong>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <img src="img/perfumesItem3-1.png" alt="">
+                                        <div class="item_info">
+                                            <span>LP0212</span>
+                                            <p>Spell on You</p>
+                                            <strong>$300.00</strong>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <img src="img/perfumesItem4.png" alt="">
+                                        <div class="item_info">
+                                            <span>LP0216</span>
+                                            <p>Travel Spray Spell on You</p>
+                                            <strong>$295.00</strong>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <img src="img/perfumesItem5.png" alt="">
+                                        <div class="item_info">
+                                            <span>LP0330</span>
+                                            <p>Spell On You Perfume and Travel Case Set</p>
+                                            <strong>$995.00</strong>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <img src="img/perfumesItem6.png" alt="">
+                                        <div class="item_info">
+                                            <span>LP0242</span>
+                                            <p>Stellar Times</p>
+                                            <strong>$550.00</strong>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="right">
+                                <div class="inner">
+                                    <div class="list">
+                                        <h4>Jewelry</h4>
+                                        <a href="#">More</a>
+                                        <div class="info">
+                                            <div class="box">
+                                                <a href="#">collections</a>
+                                                <a href="#">Icons</a>
+                                                <a href="#">Highlights</a>
+                                            </div>
+                                            <div class="box">
+                                                <a href="#">Categories</a>
+                                                <a href="#">High Jewelry</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="list">
+                                        <h4>Watches</h4>
+                                        <a href="#">More</a>
+                                        <div class="info">
+                                            <div class="box">
+                                                <a href="#">World of Watches</a>
+                                                <a href="#">Traditional Watches</a>
+                                            </div>
+                                            <div class="box">
+                                                <a href="#">Connected Watches</a>
+                                                <a href="#">La Fabrique du Temps</a>
+                                            </div>
+                                            <div class="box">
+                                                <a href="#">Louis Vuitton Watch Prize for Independent Creatives</a>
+                                            </div>
+                                            <div class="box">
+                                                <a href="#">Highlights</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="list">
+                                        <h4>Perfumes</h4>
+                                        <a href="#">More</a>
+                                        <div class="info">
+                                            <div class="box">
+                                                <a href="#">Icons</a>
+                                                <a href="#">Collections</a>
+                                                <a href="#">Exceptional Creations</a>
+                                            </div>
+                                            <div class="box">
+                                                <a href="#">World of Fragrances</a>
+                                                <a href="#">Highlights</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <h1>
+                    <img src="img/cont_06_logo.png" alt="">
+                </h1>
+                <video autoplay muted loop>
+                    <source src="img/Jewelry_video.mp4" type="video/mp4">
+                </video>
+            </div><!-- .inner end -->
+        </section><!-- .cont_06 end -->
+        <section class="cont_07">
+            <div class="inner">
+                <div class="bg">
+                    <div class="close">
+                        <img src="img/cont_07_close.png" alt="">
+                    </div>
+                    <div class="arti on">
+                        <img src="img/artHighlight.png" alt="">
+                        <div class="list">
+                            <div class="title">
+                                <h4>Art of Living</h4>
+                            </div>
+                            <div class="inner">
+                                <h4>Highlights</h4>
+                                <h4>Trunks and Travel</h4>
+                                <h4>Home</h4>
+                                <h4>Books and Stationery</h4>
+                                <h4>Sports and Lifestyle</h4>
+                                <h4>Tech Objects</h4>
+                            </div>
+                        </div>
+                        <a href="#">More</a>
+                    </div>
+                </div>
+                <h1>
+                    <img src="img/cont_07_logo.png" alt="">
+                </h1>
+                <video autoplay muted loop>
+                    <source src="img/art_video.mp4" type="video/mp4">
+                </video>
+            </div><!-- .inner end -->
+        </section><!-- .cont_07 end -->
+        <section class="cont_08">
+            <div class="inner">
+                <h1>
+                    <img src="img/cont_08_logo.png" alt="">
+                </h1>
+                <video autoplay muted loop>
+                    <source src="img/services_video.mp4" type="video/mp4">
+                </video>
+            </div><!-- .inner end -->
+        </section><!-- .cont_08 end -->
+        <section class="footer">
+            <div class="up">
+                <span>Top</span>
+            </div>
+            <div class="bg">
+                <img src="img/footer_pattern.png" alt="">
+            </div>
+            <div class="inner">
+                <div class="up">
+                    <div class="item">
+                        <h4>HELP</h4>
+                        <a href="#">Our Client Advisors are available to assist you by phone at +1.866.VUITTON . You can
+                            also chat or email us.</a>
+                        <a href="#">FAQs</a>
+                        <a href="#">Product Care</a>
+                        <a href="#">Stores</a>
+                    </div>
+                    <div class="item">
+                        <h4>ABOUT LOUIS VUITTON</h4>
+                        <a href="#">Fashion Shows</a>
+                        <a href="#">Arts & Culture</a>
+                        <a href="#">La Maison</a>
+                        <a href="#">Sustainability</a>
+                        <a href="#">Latest News</a>
+                        <a href="#">Careers</a>
+                        <a href="#">Foundation Louis Vuitton</a>
+                    </div>
+                    <div class="item">
+                        <h4>EMAIL SIGN-UP</h4>
+                        <a href="#">Sign up for Louis Vuitton emails and receive the latest news from the Maison,
+                            including exclusive online pre-launches and new collections.</a>
+                        <a href="#">Follow Us</a>
+                    </div>
+                </div>
+                <div class="down">
+                    <div class="item">
+                        <a href="#">Sitemap</a>
+                        <a href="#">Legal Notices</a>
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">California Supply Chains Act</a>
+                        <a href="#">Do Not Sell or Share My Personal Informati</a>
+                        <div class="lang">
+                            <img src="img/lang_icon.png" alt="">
+                            <span>EN</span>
+                            <div class="lang_box">
+                                <a href="#">KO</a>
+                                <a href="#">EN</a>
+                                <a href="#">CH</a>
+                                <a href="#">JP</a>
+                                <a href="#">FR</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="logo">
+                        <a href="#">
+                            <img src="img/footer_logo.png" alt="">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div><!-- #wrap end -->
+
+
+
+</body>
+
+</html>

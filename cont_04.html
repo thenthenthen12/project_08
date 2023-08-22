@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Cormorant+Garamond:400,500,500i,600,600i,700,700i |Cormorant+SC:400,500,600,700');
+
+/* ====================================
+General Styles
+==================================== */
+
+
+.page-wrap {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ====================================
+Home Slider
+==================================== */
+
+#home-slider {
+  height: 80vh;
+  width: 90vw;
+  position: relative;
+
+}
+.swiper-container {
+  height: 100%;
+  width: 100%;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+
+.swiper-image-one {
+  background-image: url('img/bagsHerItem1.png');
+}
+
+.swiper-image-two {
+  background-image: url('img/bagsHerItem1-1.png');
+}
+
+.swiper-image-three {
+  background-image: url('img/bagsHerItem2.png');
+}
+
+.swiper-image-four {
+  background-image: url('img/bagsHerItem2-1.png');
+}
+
+.swiper-image-five {
+  background-image: url('img/bagsHerItem3.png');
+}
+
+.swiper-image-six {
+  background-image: url('img/bagsHerItem3-1.png');
+}
+.swiper-image-seven {
+  background-image: url('img/bagsHerItem4.png');
+}
+.swiper-image-eight {
+  background-image: url('img/bagsHerItem4-1.png');
+}
+.swiper-image-nine {
+  background-image: url('img/bagsHerItem5.png');
+}
+.swiper-image-ten {
+  background-image: url('img/bagsHerItem5-1.png');
+}
+.swiper-image-11 {
+  background-image: url('img/bagsHerItem6.png');
+}
+.swiper-image-12 {
+  background-image: url('img/bagsHerItem6-1.png');
+}
+.swiper-image-13 {
+  background-image: url('img/bagsHerItem7.png');
+}
+.swiper-image-14 {
+  background-image: url('img/bagsHerItem7-1.png');
+}
+.swiper-image-15 {
+  background-image: url('img/bagsHerItem8.png');
+}
+.swiper-image-16 {
+  background-image: url('img/bagsHerItem8-1.png');
+}
+.swiper-image-17 {
+  background-image: url('img/bagsHerItem9.png');
+}
+.swiper-image-18 {
+  background-image: url('img/bagsHerItem9-1.png');
+}
+.swiper-image-19 {
+  background-image: url('img/bagsHerItem10.png');
+}
+.swiper-image-20 {
+  background-image: url('img/bagsHerItem10-1.png');
+}
+
+.swiper-image {
+  width: 100%;
+  height: 100%;
+}
+.swiper-image-inner {
+  background-size: cover;
+  background-position: center center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background-color: #e9bb732a;
+  background-blend-mode: overlay;
+}
+.swiper-image-left {
+  transition: all 1s linear;
+  transition-delay: 1s;
+}
+.swiper-image-inner.swiper-image-right {
+  transition: all 1s linear;
+  transition-delay: 1s;
+  background-color: #e9bb732a;
+  background-blend-mode: multiply;
+}
+h1 {
+  font-weight: 500;
+  color: #313039;
+  align-self: flex-start;
+  margin: 0 0 auto 0;
+  font-size: 4.5rem;
+  line-height: 1;
+  transition: all .8s cubic-bezier(0.215, 0.61, 0.355, 1) 1.1s;
+  transform: translate3d(-20%, 0, 0);
+  opacity: 0;
+}
+h1 span.emphasis {
+  font-weight: bold;
+  opacity: 0;
+  transition: all .8s cubic-bezier(0.215, 0.61, 0.355, 1) 1.2s;
+  transform: translate3d(-20%, 0, 0);
+  display: inline-block;
+}
+h1 span:not(.emphasis) {
+  font-size: 50px;
+}
+h1 + p {
+  font-size: 16px;
+  letter-spacing: 2px;
+  margin: 0;
+  line-height: 1;
+  margin-bottom: auto;
+  align-self: flex-end;
+  text-transform: uppercase;
+  transition: all .8s cubic-bezier(0.215, 0.61, 0.355, 1) 1.3s;
+  transform: translate3d(-20%, 0, 0);
+  opacity: 0;
+  font-weight: 500;
+  color: #313039;
+  padding-right: 8rem;
+}
+p.paragraph {
+  margin: 0;
+  color: #fff;
+  width: 100%;
+  max-width: 350px;
+  text-align: justify;
+  font-size: 1.2rem;
+  font-weight: bold;
+  opacity: 0;
+  transition: all .6s cubic-bezier(0.215, 0.61, 0.355, 1) 1.4s;
+  transform: translate3d(-20%, 0, 0);
+  position: relative;
+  z-index: 3;
+}
+.swiper-slide.swiper-slide-active .swiper-image-right::after{
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: #02020271;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+.swiper-slide.swiper-slide-active h1,
+.swiper-slide.swiper-slide-active p.paragraph,
+.swiper-slide.swiper-slide-active h1 span.emphasis,
+.swiper-slide.swiper-slide-active h1 + p {
+  transform: translate3d(0, 0, 0);
+  opacity: 1;
+}
+
+@media screen and (max-width: 1280px) {
+  h1 {
+    font-size: 3.9rem;
+  }
+  h1 span:not(.emphasis) {
+    font-size: 2.9rem;
+  }
+  h1 + p {
+    font-size: 13px;
+  }
+  p.paragraph {
+    font-size: 1rem;
+    line-height: 1.3;
+  }
+}
+@media screen and (max-width: 960px) {
+  h1 {
+    font-size: 3.5rem;
+  }
+  h1 span:not(.emphasis) {
+    font-size: 2.5rem;
+  }
+  p.paragraph {
+    max-width: 90%;
+  }
+}
+@media screen and (max-width: 640px) {
+  #home-slider{
+    height: 86vh;
+    width: 96vw;
+  }
+  h1 {
+    font-size: 3.2rem;
+    align-self: center;
+  }
+  h1 span:not(.emphasis) {
+    font-size: 2.1rem;
+  }
+  p.paragraph {
+    max-width: 94%;
+  }
+}
+
+.swiper-container {
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+.swiper-container-no-flexbox .swiper-slide {
+  float: left;
+}
+.swiper-container-vertical > .swiper-wrapper {
+  -webkit-box-orient: vertical;
+  -moz-box-orient: vertical;
+  -ms-flex-direction: column;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+}
+.swiper-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-transition-property: -webkit-transform;
+  -moz-transition-property: -moz-transform;
+  -o-transition-property: -o-transform;
+  -ms-transition-property: -ms-transform;
+  transition-property: transform;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+}
+.swiper-container-android .swiper-slide, .swiper-wrapper {
+  -webkit-transform: translate3d(0px, 0, 0);
+  -moz-transform: translate3d(0px, 0, 0);
+  -o-transform: translate(0px, 0px);
+  -ms-transform: translate3d(0px, 0, 0);
+  transform: translate3d(0px, 0, 0);
+}
+.swiper-container-multirow > .swiper-wrapper {
+  -webkit-box-lines: multiple;
+  -moz-box-lines: multiple;
+  -ms-flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+.swiper-container-free-mode > .swiper-wrapper {
+  -webkit-transition-timing-function: ease-out;
+  -moz-transition-timing-function: ease-out;
+  -ms-transition-timing-function: ease-out;
+  -o-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+  margin: 0 auto;
+}
+.swiper-slide {
+  -webkit-flex-shrink: 0;
+  -ms-flex: 0 0 auto;
+  flex-shrink: 0;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background-color: #e9bb732a;
+  overflow: hidden;
+  display: flex;
+  
+}
+    </style>
+    <script src="lib/jquery-3.7.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script>
+        $(function(){
+            var mySwiper = new Swiper(".swiper-container", {
+            direction: "vertical",
+            loop: true,
+            pagination: ".swiper-pagination",
+            grabCursor: true,
+            speed: 1000,
+            paginationClickable: true,
+            parallax: true,
+            autoplay: false,
+            effect: "slide",
+            mousewheelControl: 1
+            });
+        })
+    </script>
+</head>
+<body>
+    <!-- Page Wrap -->
+<div class="page-wrap">
+    <div id="home-slider">
+      <div class="swiper-container">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide swiper-slide-one">
+            <div class="swiper-image" data-swiper-parallax-y="-20%">
+              <div class="swiper-image-inner swiper-image-left swiper-image-one">
+                <h1>LV <span class="emphasis">OnTheGo PM</span></h1>
+                <p>M46647</p>
+              </div>
+            </div>
+            <div class="swiper-image" data-swiper-parallax-y="35%">
+              <div class="swiper-image-inner swiper-image-right swiper-image-two">
+                <p class="paragraph">
+                    $3,400.00
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide swiper-slide-two">
+            <div class="swiper-image" data-swiper-parallax-y="-20%">
+              <div class="swiper-image-inner swiper-image-left swiper-image-three">
+                <h1>LV <span class="emphasis">Coussin PM</span></h1>
+                <p>M23505</p>
+              </div>
+            </div>
+            <div class="swiper-image" data-swiper-parallax-y="35%">
+              <div class="swiper-image-inner swiper-image-right swiper-image-four">
+                <p class="paragraph">
+                    $5,200.00                
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide swiper-slide-three">
+            <div class="swiper-image" data-swiper-parallax-y="-20%">
+              <div class="swiper-image-inner swiper-image-left swiper-image-five">
+                <h1>LV <span class="emphasis">Coussin PM</span></h1>
+                <p>M23466</p>
+              </div>
+            </div>
+            <div class="swiper-image" data-swiper-parallax-y="35%">
+              <div class="swiper-image-inner swiper-image-right swiper-image-six">
+                <p class="paragraph">
+                    $4,950.00                
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide swiper-slide-four">
+            <div class="swiper-image" data-swiper-parallax-y="-20%">
+              <div class="swiper-image-inner swiper-image-left swiper-image-seven">
+                <h1>LV <span class="emphasis">Petite Malle</span>. <br><span> Capitale</span></h1>
+                <p>M46755</p>
+              </div>
+            </div>
+            <div class="swiper-image" data-swiper-parallax-y="35%">
+              <div class="swiper-image-inner swiper-image-right swiper-image-eight">
+                <p class="paragraph">
+                    $7,000.00
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide swiper-slide-five">
+            <div class="swiper-image" data-swiper-parallax-y="-20%">
+              <div class="swiper-image-inner swiper-image-left swiper-image-nine">
+                <h1>LV <span class="emphasis">Mini Dauphine</span></h1>
+                <p>M22871</p>
+              </div>
+            </div>
+            <div class="swiper-image" data-swiper-parallax-y="35%">
+              <div class="swiper-image-inner swiper-image-right swiper-image-ten">
+                <p class="paragraph">
+                    $4,300.00
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide swiper-slide-six">
+            <div class="swiper-image" data-swiper-parallax-y="-20%">
+              <div class="swiper-image-inner swiper-image-left swiper-image-11">
+                <h1>LV <span class="emphasis">Marellini</span></h1>
+                <p>M22736</p>
+              </div>
+            </div>
+            <div class="swiper-image" data-swiper-parallax-y="35%">
+              <div class="swiper-image-inner swiper-image-right swiper-image-12">
+                <p class="paragraph">
+                    $2,370.00
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide swiper-slide-seven">
+            <div class="swiper-image" data-swiper-parallax-y="-20%">
+              <div class="swiper-image-inner swiper-image-left swiper-image-13">
+                <h1>LV<span class="emphasis">New Square Bag</span></h1>
+                <p>M23059</p>
+              </div>
+            </div>
+            <div class="swiper-image" data-swiper-parallax-y="35%">
+              <div class="swiper-image-inner swiper-image-right swiper-image-14">
+                <p class="paragraph">
+                    $3,550.00
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide swiper-slide-eight">
+            <div class="swiper-image" data-swiper-parallax-y="-20%">
+              <div class="swiper-image-inner swiper-image-left swiper-image-15">
+                <h1>LV<span class="emphasis">Pochette Métis</span>. <br><span>East West</span></h1>
+                <p>M46596</p>
+              </div>
+            </div>
+            <div class="swiper-image" data-swiper-parallax-y="35%">
+              <div class="swiper-image-inner swiper-image-right swiper-image-16">
+                <p class="paragraph">
+                    $3,100.00
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide swiper-slide-nine">
+            <div class="swiper-image" data-swiper-parallax-y="-20%">
+              <div class="swiper-image-inner swiper-image-left swiper-image-17">
+                <h1>LV<span class="emphasis">Bella</span></h1>
+                <p>M22198</p>
+              </div>
+            </div>
+            <div class="swiper-image" data-swiper-parallax-y="35%">
+              <div class="swiper-image-inner swiper-image-right swiper-image-18">
+                <p class="paragraph">
+                    $4,350.00
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide swiper-slide-ten">
+            <div class="swiper-image" data-swiper-parallax-y="-20%">
+              <div class="swiper-image-inner swiper-image-left swiper-image-19">
+                <h1>LV <span class="emphasis">OnTheGo MM</span></h1>
+                <p>M22975</p>
+              </div>
+            </div>
+            <div class="swiper-image" data-swiper-parallax-y="35%">
+              <div class="swiper-image-inner swiper-image-right swiper-image-20">
+                <p class="paragraph">
+                    $3,350.00
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
