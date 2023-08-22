@@ -110,6 +110,7 @@ section > .inner > video {
   object-fit: cover;
   position: relative;
   z-index: 1;
+  cursor: pointer;
 }
 section > .inner .bg .close {
   position: absolute;
