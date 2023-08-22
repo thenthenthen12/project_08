@@ -318,9 +318,6 @@ section > .inner .bg .close {
 
 /* -------------------------💛cont_02 시작💛------------------------- */
 
-.cont_02 .inner .bg .arti .item_box {
-  display: none;
-}
 .cont_02 .inner .bg .list {
   width: 1000px;
   height: 60px;
@@ -398,6 +395,7 @@ section > .inner .bg .close {
 }
 
 
+
 .cont_02 .inner .bg .arti{
   width: 464px;
   position: absolute;
@@ -405,33 +403,62 @@ section > .inner .bg .close {
   right: 220px;
   height: 704px;
 }
-.cont_02 .inner .bg .arti .item_box.on{
-  display: block;
-  position: relative;
+.cont_02 .inner .bg .arti .item::before{
+  content: "More";
+  color: #fff;
+  font-size: 50px;
+  position: absolute;
+  bottom: 25%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 8;
+  letter-spacing: 4px;
+  opacity: 0;
+  transition: 1s;
+}
+.cont_02 .inner .bg .arti .item::after{
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background: #1f1507a3;
+  z-index: 7;
+  opacity: 0;
+  transition: 1s;
+}
+.cont_02 .inner .bg .arti .item:hover::after{
+  opacity: 1;
+}
+.cont_02 .inner .bg .arti .item:hover::before{
+  opacity: 1;
+}
+.cont_02 .inner .bg .arti .item_box{
   width: 100%;
   height: 100%;
 }
-.cont_02 .inner .bg .item_box.on .swiper-wrapper{
+.cont_02 .inner .bg .item_box .swiper-wrapper{
   width: 100%;
   height: 100%;
 }
-.cont_02 .inner .bg .item_box.on .swiper-wrapper .swiper-slide{
+.cont_02 .inner .bg .item_box .swiper-wrapper .swiper-slide{
   width: 100%;
   height: 100%;
 }
-.cont_02 .inner .bg .arti .item_box.on .swiper-wrapper .swiper-slide .item{
+.cont_02 .inner .bg .arti .item_box .swiper-wrapper .swiper-slide .item{
   width: 100%;
   height: 100%;
   position: relative;
   padding: 10px;
   background-color: #dfc8b7;
 }
-.cont_02 .inner .bg .arti .item_box.on .swiper-wrapper .swiper-slide .item img{
+.cont_02 .inner .bg .arti .item_box .swiper-wrapper .swiper-slide .item img{
   width: 100%;
   text-emphasis: 100%;
   object-fit: cover;
 }
-.cont_02 .inner .bg .arti .item_box.on .swiper-wrapper .swiper-slide .item .item_info {
+.cont_02 .inner .bg .arti .item_box .swiper-wrapper .swiper-slide .item .item_info {
   text-align: center;
   position: absolute;
   top: 60%;
@@ -440,12 +467,12 @@ section > .inner .bg .close {
   letter-spacing: 4px;
   color: #492d21;
 }
-.cont_02 .inner .bg .arti .item_box.on .swiper-wrapper .swiper-slide .item .item_info p {
+.cont_02 .inner .bg .arti .item_box .swiper-wrapper .swiper-slide .item .item_info p {
   font-size: 25px;
   margin: 20px 0 40px;
   line-height: 1.3;
 }
-.cont_02 .inner .bg .arti .item_box.on .swiper-wrapper .swiper-slide .item .item_info strong {
+.cont_02 .inner .bg .arti .item_box .swiper-wrapper .swiper-slide .item .item_info strong {
   font-size: 20px;
 } 
 

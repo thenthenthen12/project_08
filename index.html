@@ -45,7 +45,7 @@
 
             //cont_01 스크립트 시작
 
-           
+
 
             let menu = $('.cont_01 .inner nav .menu');
             let menuIcon = $('.cont_01 .inner nav .menu .up a:last-child img');
@@ -161,33 +161,48 @@
 
 
             //cont_02 스크립트 시작
-
-            let list = $('.cont_02 .inner .bg .list h4');
-            let item = $('.cont_02 .inner .bg .arti .item_box');
-            let bigImg = $('.cont_02 .inner .bg .big_img img');
-
-            imgList = ['img/giftforher.png', 'img/giftbabymain.png', 'img/gifthomemain.png', 'img/personalization.png']
-
-
             var swiper = new Swiper(".mySwiper02", {
                 effect: "cards",
                 grabCursor: true,
             });
+            let list = $('.cont_02 .inner .bg .list h4');
+            let item = $('.cont_02 .inner .bg .arti .item_box');
+            let bigImg = $('.cont_02 .inner .bg .big_img img');
+            let itemOn = $('.cont_02 .inner .bg .arti .item_box.on');
 
+            imgList = ['img/giftforher.png', 'img/giftbabymain.png', 'img/gifthomemain.png', 'img/personalization.png']
+
+
+
+
+            item.css({
+                'display': 'none'
+            })
+
+            itemOn.css({
+                'display': 'block'
+            })
             list.click(function () {
 
                 i = $(this).index();
 
                 bigImg.attr('src', imgList[i])
 
+
                 list.removeClass('on')
                 $(this).addClass('on')
 
-                item.removeClass('on')
-                item.eq(i).addClass('on')
-
+                item.css({
+                    'display': 'none'
+                })
+                item.eq(i).css({
+                    'display': 'block'
+                })
 
             })
+
+
+
 
 
             //cont_04 스크립트 시작
@@ -364,6 +379,7 @@
 
 
         });
+
     </script>
 </head>
 
@@ -657,46 +673,46 @@
                     <div class="arti">
                         <div class="swiper mySwiper02 item_box on">
                             <div class="swiper-wrapper">
-                              <div class="swiper-slide">
-                                <div class="item">
-                                    <img src="img/giftHerItem1.png" alt="">
-                                    <div class="item_info">
-                                        <span>M23069</span>
-                                        <p>Speedy Bandoulière 20</p>
-                                        <strong>$2,280.00</strong>
-                                    </div><!-- .item_info end -->
+                                <div class="swiper-slide">
+                                    <div class="item">
+                                        <img src="img/giftHerItem1.png" alt="">
+                                        <div class="item_info">
+                                            <span>M23069</span>
+                                            <p>Speedy Bandoulière 20</p>
+                                            <strong>$2,280.00</strong>
+                                        </div><!-- .item_info end -->
+                                    </div>
                                 </div>
-                              </div>
-                              <div class="swiper-slide">
-                                <div class="item">
-                                    <img src="img/giftHerItem2.png" alt="">
-                                    <div class="item_info">
-                                        <span>Z1908E</span>
-                                        <p>My Monogram Soft Cat Eye Sunglasses</p>
-                                        <strong>$515.00</strong>
-                                    </div><!-- .item_info end -->
+                                <div class="swiper-slide">
+                                    <div class="item">
+                                        <img src="img/giftHerItem2.png" alt="">
+                                        <div class="item_info">
+                                            <span>Z1908E</span>
+                                            <p>My Monogram Soft Cat Eye Sunglasses</p>
+                                            <strong>$515.00</strong>
+                                        </div><!-- .item_info end -->
+                                    </div>
                                 </div>
-                              </div>
-                              <div class="swiper-slide">
-                                <div class="item">
-                                    <img src="img/giftHerItem3.png" alt="">
-                                    <div class="item_info">
-                                        <span>M22921</span>
-                                        <p>Neverfull MM</p>
-                                        <strong>$2,350.00</strong>
-                                    </div><!-- .item_info end -->
+                                <div class="swiper-slide">
+                                    <div class="item">
+                                        <img src="img/giftHerItem3.png" alt="">
+                                        <div class="item_info">
+                                            <span>M22921</span>
+                                            <p>Neverfull MM</p>
+                                            <strong>$2,350.00</strong>
+                                        </div><!-- .item_info end -->
+                                    </div>
                                 </div>
-                              </div>
-                              <div class="swiper-slide">
-                                <div class="item">
-                                    <img src="img/giftHerItem4.png" alt="">
-                                    <div class="item_info">
-                                        <span>M8333Z</span>
-                                        <p>Vivienne Amour Bracelet</p>
-                                        <strong>$730.00</strong>
-                                    </div><!-- .item_info end -->
+                                <div class="swiper-slide">
+                                    <div class="item">
+                                        <img src="img/giftHerItem4.png" alt="">
+                                        <div class="item_info">
+                                            <span>M8333Z</span>
+                                            <p>Vivienne Amour Bracelet</p>
+                                            <strong>$730.00</strong>
+                                        </div><!-- .item_info end -->
+                                    </div>
                                 </div>
-                              </div>
                             </div>
                         </div>
                         <div class="swiper mySwiper02 item_box">
